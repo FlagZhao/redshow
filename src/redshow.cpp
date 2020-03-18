@@ -279,6 +279,9 @@ redshow_result_t trace_analyze(Kernel &kernel, uint64_t host_op_id, gpu_patch_bu
   size_t size = trace_data->head_index;
   gpu_patch_record_t *records = reinterpret_cast<gpu_patch_record_t *>(trace_data->records);
 
+  u64 read_tongji = 0;
+  u64 write_tongji = 0;
+
   for (size_t i = 0; i < size; ++i) {
     // Iterate over each record
     gpu_patch_record_t *record = records + i;
@@ -373,8 +376,10 @@ redshow_result_t trace_analyze(Kernel &kernel, uint64_t host_op_id, gpu_patch_bu
           for (auto analysis : analysis_enabled) {
             if (analysis == REDSHOW_ANALYSIS_SPATIAL_REDUNDANCY) {
               if (record->flags & GPU_PATCH_READ) {
+                read_tongji++;
                 get_spatial_trace(record->pc, value, memory_op_id, unit_access_type, read_spatial_trace);
               } else {
+                write_tongji++;
                 get_spatial_trace(record->pc, value, memory_op_id, unit_access_type, write_spatial_trace);
               }
             } else if (analysis == REDSHOW_ANALYSIS_TEMPORAL_REDUNDANCY) {
@@ -393,7 +398,7 @@ redshow_result_t trace_analyze(Kernel &kernel, uint64_t host_op_id, gpu_patch_bu
       }
     }
   }
-
+  std::cout << "findhaotongji," << cubin_id << "," << read_tongji << "," << write_tongji << std::endl;
   return result;
 }
 
@@ -775,7 +780,21 @@ redshow_result_t redshow_flush(uint32_t thread_id) {
           transform_pc(*symbols, pc, function_index, cubin_offset, pc_offset);
           record_data.views[i].function_index = function_index;
           record_data.views[i].pc_offset = pc_offset;
+
         }
+//        @findhao
+        u64 sum_read = 0;
+        // {pc1 : {pc2 : {<value, type>}}}
+        for (auto &from_pc_iter : kernel.read_pc_pairs) {
+          for (auto &to_pc_iter : from_pc_iter.second) {
+            auto to_pc = to_pc_iter.first;
+            // {<value, type> : count}
+            for (auto &val_iter : to_pc_iter.second) {
+              sum_read += val_iter.second;
+            }
+          }
+        }
+
         record_data_callback(cubin_id, kernel_id, &record_data);
         // Write
         record_data.access_type = REDSHOW_ACCESS_WRITE;
@@ -790,6 +809,19 @@ redshow_result_t redshow_flush(uint32_t thread_id) {
           record_data.views[i].function_index = function_index;
           record_data.views[i].pc_offset = pc_offset;
         }
+        //        @findhao
+        u64 sum_write = 0;
+        // {pc1 : {pc2 : {<value, type>}}}
+        for (auto &from_pc_iter : kernel.write_pc_pairs) {
+          for (auto &to_pc_iter : from_pc_iter.second) {
+            auto to_pc = to_pc_iter.first;
+            // {<value, type> : count}
+            for (auto &val_iter : to_pc_iter.second) {
+              sum_write += val_iter.second;
+            }
+          }
+        }
+        std::cout << "findhaotongji_red," << cubin_id << "," << sum_read << "," << sum_write << std::endl;
         record_data_callback(cubin_id, kernel_id, &record_data);
       }
     }
