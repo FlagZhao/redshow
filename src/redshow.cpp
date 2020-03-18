@@ -398,7 +398,7 @@ redshow_result_t trace_analyze(Kernel &kernel, uint64_t host_op_id, gpu_patch_bu
       }
     }
   }
-  std::cout << "findhaotongji," << cubin_id << "," << read_tongji << "," << write_tongji << std::endl;
+  std::cout << "findhaotongji," << kernel.kernel_id << "," << read_tongji << "," << write_tongji << std::endl;
   return result;
 }
 
@@ -821,16 +821,16 @@ redshow_result_t redshow_flush(uint32_t thread_id) {
             }
           }
         }
-        std::cout << "findhaotongji_red," << cubin_id << "," << sum_read << "," << sum_write << std::endl;
+        std::cout << "findhaotongji_red," << kernel_id << "," << sum_read << "," << sum_write << std::endl;
         record_data_callback(cubin_id, kernel_id, &record_data);
       }
     }
   }
 
-  if (mem_views_limit != 0) {
-    show_spatial_trace(thread_id, spatial_read_statistic, mem_views_limit, true);
-    show_spatial_trace(thread_id, spatial_write_statistic, mem_views_limit, false);
-  }
+//  if (mem_views_limit != 0) {
+  show_spatial_trace(thread_id, spatial_read_statistic, 10, true);
+  show_spatial_trace(thread_id, spatial_write_statistic, 10, false);
+//  }
 
   // Remove all kernel records
   kernel_map_lock.lock();
