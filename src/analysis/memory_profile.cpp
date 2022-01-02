@@ -542,6 +542,40 @@ void MemoryProfile::merge_memory_range(Set<MemoryRange> &memory, const MemoryRan
 }
 
 
+void MemoryProfile::update_heat_maps(u64 op_id, MemoryRange memory_range) {
+  auto memory = _memories.at(op_id);
+  auto start = memory_range.start - memory->memory_range.start;
+  auto end = memory_range.end - memory->memory_range.start;
+
+  auto heat_map = _heat_maps.find(op_id);
+  if (heat_map == _heat_maps.end()) { // didn't have the heat map of the memory before
+    std::unordered_map<size_t, Vector<uint8_t>> temp_heat_map;
+    for (size_t i = start; i < end; i++) {
+      Vector<uint8_t> vec8 = {1};
+      temp_heat_map.emplace(i, vec8);
+    }
+    _heat_maps.emplace(op_id, temp_heat_map);
+  } else { 
+    auto &temp_heat_map = heat_map->second;
+    for (size_t i = start; i < end; i++) {
+      auto iter = temp_heat_map.find(i);
+      if (iter == temp_heat_map.end()) { // this location didn't be accessed before
+        Vector<uint8_t> vec8 = {1};
+        temp_heat_map.emplace(i, vec8);
+      } else {
+        auto &count = iter->second.back();
+        if (count == 255) { // uint8 can't represent it
+          iter->second.push_back(1);
+        } else {
+          count++;
+        }
+      }
+    }
+  }
+
+}
+
+
 // not a whole buffer, but a part buffer in a memory object
 void MemoryProfile::unit_access(i32 kernel_id, const ThreadId &thread_id, const AccessKind &access_kind,
                            const Memory &memory, u64 pc, u64 value, u64 addr, u32 index,
@@ -553,6 +587,8 @@ if (memory.op_id <= REDSHOW_MEMORY_HOST) {
 
   auto &memory_range = memory.memory_range;
   if (flags & GPU_PATCH_READ) {
+    // add for heatmap
+    update_heat_maps(memory.op_id, memory_range);
     if (_configs[REDSHOW_ANALYSIS_READ_TRACE_IGNORE] == false) {
       merge_memory_range(_trace->read_memory[memory.op_id], memory_range);
     } else if (_trace->read_memory[memory.op_id].empty()) {
@@ -560,6 +596,8 @@ if (memory.op_id <= REDSHOW_MEMORY_HOST) {
     }
   }
   if (flags & GPU_PATCH_WRITE) {
+    // add for heatmap
+    update_heat_maps(memory.op_id, memory_range);
     merge_memory_range(_trace->write_memory[memory.op_id], memory_range);
   }
 

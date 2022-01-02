@@ -24,6 +24,8 @@
 #include "operation/memfree.h"
 
 #include <fstream>
+#include <common/vector.h>
+#include <unordered_map>
 
 
 namespace redshow {
@@ -134,6 +136,11 @@ struct ChunkFragmentation {
  */
 Map<u32, Map<u64, Map<u64, ChunkFragmentation>>> _object_fragmentation_of_kernel_per_thread;
 
+/**
+ * @brief std::unordered_map<size_t, Vector<unint8>>
+ * 
+ */
+Map<u64, std::unordered_map<size_t, Vector<uint8_t>>> _heat_maps;
 
 
 
@@ -195,6 +202,12 @@ void update_blank_chunks(i32 kernel_id, u64 memory_op_id, MemoryRange range_iter
  * @param op_id 
  */
 void update_object_fragmentation_in_kernel(u32 cpu_thread, i32 kernel_id);
+
+/**
+ * @brief Update heatmap
+ * 
+ */
+void update_heat_maps(u64 op_id, MemoryRange memory_range);
 
 
 
