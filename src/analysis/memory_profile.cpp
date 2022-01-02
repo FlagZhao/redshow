@@ -18,6 +18,7 @@
 #ifdef DEBUG_PRINT
 #include <iostream>
 #endif
+#include <iostream>
 
 namespace redshow {
 
@@ -551,8 +552,12 @@ void MemoryProfile::update_heat_maps(u64 op_id, MemoryRange memory_range) {
   if (heat_map == _heat_maps.end()) { // didn't have the heat map of the memory before
     std::unordered_map<size_t, Vector<uint8_t>> temp_heat_map;
     for (size_t i = start; i < end; i++) {
-      Vector<uint8_t> vec8 = {1};
+      std::cout << "888***" << std::endl;
+      std::cout << "start" << start << "  end" << end << std::endl;
+      Vector<uint8_t> vec8;
+      vec8.push_back(1);
       temp_heat_map.emplace(i, vec8);
+
     }
     _heat_maps.emplace(op_id, temp_heat_map);
   } else { 
@@ -659,6 +664,29 @@ void MemoryProfile::flush(const std::string &output_dir, const LockableMap<u32, 
   // out << "************************************************************" << std::endl;
   // out << "****************** Fragmentation Info END ******************" << std::endl;
   // out << "************************************************************" << std::endl;
+
+  for (auto iter : _heat_maps) {
+    out << "mem_id " << _op_node.at(iter.first) << std::endl;
+    auto len = _memories.at(iter.first)->len;
+    for (size_t i = 0; i < len; i++) {
+      auto iiter = iter.second.find(i); // the location map
+      if (iiter == iter.second.end()) { // this location didn't be accessed
+        out << 0 << " ";
+      } else { // location was accessed
+        uint sum = 0;
+        for (auto iiiter : iiter->second) { // location vector
+          sum += iiiter;
+        }
+        out << sum << " ";
+      }
+      if (i % 40 == 39) 
+        out << std::endl;
+    }
+    out << std::endl;
+    out << std::endl;
+  }
+
+
   out.close();
 
 }
