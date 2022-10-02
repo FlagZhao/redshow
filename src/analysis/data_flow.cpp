@@ -103,7 +103,7 @@ void DataFlow::kernel_op_callback(std::shared_ptr<Kernel> op) {
         range_size < _FRAGMENT_LEN_LIMIT) {
         copy_type = CopyType::NON_CONTINOUS_FRAGMENT;
       } else {
-        dtoh(host_cache + device_start_min - device, device, device_range_len);
+        dtoh(host_cache + device_start_min - device, device_start_min, device_range_len);
         copy_type = CopyType::MIN_MAX_FRAGMENT;
       }
 
