@@ -8,6 +8,16 @@ include $(CONFIGS)
 .PHONY: clean all objects install
 
 CC := g++
+# CUR_DIR = $(shell pwd)/
+
+# LIB_DIR := /home/yzhao62/opt/gpupunk/redshow/lib/
+# INC_DIR := /home/yzhao62/opt/gpupunk/redshow/include/
+# BIN_DIR := /home/yzhao62/opt/gpupunk/redshow/bin/
+# SRC_DIR := /home/yzhao62/opt/gpupunk/redshow/src/
+# BOOST_INC_DIR := $(BOOST_DIR)/include
+# BUILD_DIR := /home/yzhao62/opt/gpupunk/redshow/build/
+
+
 
 LIB_DIR := lib/
 INC_DIR := include/
@@ -15,7 +25,7 @@ BIN_DIR := bin/
 SRC_DIR := src/
 BOOST_INC_DIR := $(BOOST_DIR)/include
 BUILD_DIR := build/
-CUR_DIR = $(shell pwd)/
+
 
 LIB := $(LIB_DIR)lib$(PROJECT).so
 
@@ -68,8 +78,11 @@ $(OBJECTS_DIR):
 $(LIB_DIR):
 	mkdir -p $@
 
+# $(BINS): % : $(SRC_DIR)%.cpp $(OBJECTS)
+# 	$(CC) $(CFLAGS) -I$(INC_DIR) -I$(BOOST_DIR)/include -I$(GPU_PATCH_DIR)/include -o $@ $^
+
 $(BINS): % : $(SRC_DIR)%.cpp $(OBJECTS)
-	$(CC) $(CFLAGS) -I$(INC_DIR) -I$(BOOST_DIR)/include -I$(GPU_PATCH_DIR)/include -o $@ $^
+	$(CC) $(CFLAGS) -I$(INC_DIR) -I$(BOOST_DIR)/include -I$(GPU_PATCH_DIR)/include -o $@ $(filter-out $(BUILD_DIR)src/$*.o, $(OBJECTS))
 
 $(LIB): $(OBJECTS)
 	$(CC) $(LDFLAGS) -o $@ $^ 
@@ -82,16 +95,26 @@ clean:
 
 ifdef PREFIX
 # Do not install main binary
-install:
-	mkdir -p $(PREFIX)/$(LIB_DIR)
-	mkdir -p $(PREFIX)/$(INC_DIR)
-	mkdir -p $(PREFIX)/$(BIN_DIR)
-	cp -rf $(LIB_DIR) $(PREFIX)
+INSTALL_INC_DIR = $(PREFIX)/include/
+INSTALL_LIB_DIR = $(PREFIX)/lib
+INSTALL_BIN_DIR = $(PREFIX)/bin
+
+install: all
+	mkdir -p $(INSTALL_INC_DIR)
+	mkdir -p $(INSTALL_LIB_DIR)
+	mkdir -p $(INSTALL_BIN_DIR)
+	cp -rf $(LIB_DIR)/* $(INSTALL_LIB_DIR)/
 	# cp -rf $(INC_DIR)$(PROJECT).h $(PREFIX)/$(INC_DIR)
 	# cp -rf $(INC_DIR)$(PROJECT_GRAPHVIZ).h $(PREFIX)/$(INC_DIR)
-	cp -rf $(INC_DIR)/* $(PREFIX)/$(INC_DIR)/
-	cp -rf $(BINS) $(PREFIX)/$(BIN_DIR)
+	cp -rf $(INC_DIR)/* $(INSTALL_INC_DIR)/
+	cp -rf $(BINS)/* $(INSTALL_BIN_DIR)/
 endif
 
 #utils
 print-% : ; $(info $* is $(flavor $*) variable set to [$($*)]) @true
+
+print-includes:
+	@echo "Include directories:"
+	@echo "INC_DIR = $(INC_DIR)"
+	@echo "BOOST_DIR = $(BOOST_DIR)"
+	@echo "GPU_PATCH_DIR = $(GPU_PATCH_DIR)"

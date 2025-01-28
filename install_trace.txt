@@ -1,0 +1,515 @@
+mkdir -p /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/
+mkdir -p /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/analysis/
+mkdir -p /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/binutils/
+mkdir -p /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/common/
+mkdir -p /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/
+mkdir -p /home/yzhao62/opt/gpupunk/redshow/lib/
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/common/hash.o -c /home/yzhao62/opt/gpupunk/redshow/src/common/hash.cpp
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/common/utils.o -c /home/yzhao62/opt/gpupunk/redshow/src/common/utils.cpp
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/operation.o -c /home/yzhao62/opt/gpupunk/redshow/src/operation/operation.cpp
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/memcpy.o -c /home/yzhao62/opt/gpupunk/redshow/src/operation/memcpy.cpp
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/memory.o -c /home/yzhao62/opt/gpupunk/redshow/src/operation/memory.cpp
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/memset.o -c /home/yzhao62/opt/gpupunk/redshow/src/operation/memset.cpp
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/binutils/instruction.o -c /home/yzhao62/opt/gpupunk/redshow/src/binutils/instruction.cpp
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/redshow.o -c /home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp: In function ‘redshow_result_t redshow_cubin_register(uint32_t, uint32_t, uint32_t, const uint64_t*, const char*)’:
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:827:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  827 | }
+      | ^
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp: In function ‘redshow_result_t redshow_memory_register(int32_t, uint64_t, uint64_t, uint64_t)’:
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:886:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 4 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+  886 |       "\nredshow-> Enter redshow_memory_register\nmemory_id: %d\nhost_op_id: %llu\nstart: %p\nend: "
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  887 |       "%p\n",
+      |       ~~~~~~
+  888 |       memory_id, host_op_id, start, end);
+      |                  ~~~~~~~~~~
+      |                  |
+      |                  uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:886:81: note: format string is defined here
+  886 |       "\nredshow-> Enter redshow_memory_register\nmemory_id: %d\nhost_op_id: %llu\nstart: %p\nend: "
+      |                                                                              ~~~^
+      |                                                                                 |
+      |                                                                                 long long unsigned int
+      |                                                                              %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:886:7: warning: format ‘%p’ expects argument of type ‘void*’, but argument 5 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+  886 |       "\nredshow-> Enter redshow_memory_register\nmemory_id: %d\nhost_op_id: %llu\nstart: %p\nend: "
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  887 |       "%p\n",
+      |       ~~~~~~
+  888 |       memory_id, host_op_id, start, end);
+      |                              ~~~~~
+      |                              |
+      |                              uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:886:92: note: format string is defined here
+  886 |       "\nredshow-> Enter redshow_memory_register\nmemory_id: %d\nhost_op_id: %llu\nstart: %p\nend: "
+      |                                                                                           ~^
+      |                                                                                            |
+      |                                                                                            void*
+      |                                                                                           %ld
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:886:7: warning: format ‘%p’ expects argument of type ‘void*’, but argument 6 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+  886 |       "\nredshow-> Enter redshow_memory_register\nmemory_id: %d\nhost_op_id: %llu\nstart: %p\nend: "
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  887 |       "%p\n",
+      |       ~~~~~~
+  888 |       memory_id, host_op_id, start, end);
+      |                                     ~~~
+      |                                     |
+      |                                     uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:887:9: note: format string is defined here
+  887 |       "%p\n",
+      |        ~^
+      |         |
+      |         void*
+      |        %ld
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp: In function ‘redshow_result_t redshow_memory_unregister(uint64_t, uint64_t, uint64_t)’:
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:943:9: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 3 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+  943 |   PRINT("\nredshow-> Enter redshow_memory_unregister\nhost_op_id: %llu\nstart: %p\nend: %p\n",
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  944 |         host_op_id, start, end);
+      |         ~~~~~~~~~~
+      |         |
+      |         uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:943:70: note: format string is defined here
+  943 |   PRINT("\nredshow-> Enter redshow_memory_unregister\nhost_op_id: %llu\nstart: %p\nend: %p\n",
+      |                                                                   ~~~^
+      |                                                                      |
+      |                                                                      long long unsigned int
+      |                                                                   %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:943:9: warning: format ‘%p’ expects argument of type ‘void*’, but argument 4 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+  943 |   PRINT("\nredshow-> Enter redshow_memory_unregister\nhost_op_id: %llu\nstart: %p\nend: %p\n",
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  944 |         host_op_id, start, end);
+      |                     ~~~~~
+      |                     |
+      |                     uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:943:81: note: format string is defined here
+  943 |   PRINT("\nredshow-> Enter redshow_memory_unregister\nhost_op_id: %llu\nstart: %p\nend: %p\n",
+      |                                                                                ~^
+      |                                                                                 |
+      |                                                                                 void*
+      |                                                                                %ld
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:943:9: warning: format ‘%p’ expects argument of type ‘void*’, but argument 5 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+  943 |   PRINT("\nredshow-> Enter redshow_memory_unregister\nhost_op_id: %llu\nstart: %p\nend: %p\n",
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  944 |         host_op_id, start, end);
+      |                            ~~~
+      |                            |
+      |                            uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:943:90: note: format string is defined here
+  943 |   PRINT("\nredshow-> Enter redshow_memory_unregister\nhost_op_id: %llu\nstart: %p\nend: %p\n",
+      |                                                                                         ~^
+      |                                                                                          |
+      |                                                                                          void*
+      |                                                                                         %ld
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp: In function ‘redshow_result_t redshow_memory_query(uint64_t, uint64_t, int32_t*, uint64_t*, uint64_t*, uint64_t*)’:
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:975:9: warning: format ‘%p’ expects argument of type ‘void*’, but argument 4 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+  975 |   PRINT("\nredshow-> Enter redshow_memory_query\nhost_op_id: %lu\nstart: %p\n", host_op_id, start);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~              ~~~~~
+      |                                                                                             |
+      |                                                                                             uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:975:75: note: format string is defined here
+  975 |   PRINT("\nredshow-> Enter redshow_memory_query\nhost_op_id: %lu\nstart: %p\n", host_op_id, start);
+      |                                                                          ~^
+      |                                                                           |
+      |                                                                           void*
+      |                                                                          %ld
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:993:13: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 4 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+  993 |       PRINT("memory_id: %d\nmemory_op_id: %llu\noffset %llu\nshadow: %p\nlen: %llu\n", *memory_id,
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  994 |             *memory_op_id, offset, *shadow_start, *len);
+      |             ~~~~~~~~~~~~~
+      |             |
+      |             uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:993:46: note: format string is defined here
+  993 |       PRINT("memory_id: %d\nmemory_op_id: %llu\noffset %llu\nshadow: %p\nlen: %llu\n", *memory_id,
+      |                                           ~~~^
+      |                                              |
+      |                                              long long unsigned int
+      |                                           %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:993:13: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 5 has type ‘long unsigned int’ [-Wformat=]
+  993 |       PRINT("memory_id: %d\nmemory_op_id: %llu\noffset %llu\nshadow: %p\nlen: %llu\n", *memory_id,
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  994 |             *memory_op_id, offset, *shadow_start, *len);
+      |                            ~~~~~~
+      |                            |
+      |                            long unsigned int
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:993:59: note: format string is defined here
+  993 |       PRINT("memory_id: %d\nmemory_op_id: %llu\noffset %llu\nshadow: %p\nlen: %llu\n", *memory_id,
+      |                                                        ~~~^
+      |                                                           |
+      |                                                           long long unsigned int
+      |                                                        %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:993:13: warning: format ‘%p’ expects argument of type ‘void*’, but argument 6 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+  993 |       PRINT("memory_id: %d\nmemory_op_id: %llu\noffset %llu\nshadow: %p\nlen: %llu\n", *memory_id,
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  994 |             *memory_op_id, offset, *shadow_start, *len);
+      |                                    ~~~~~~~~~~~~~
+      |                                    |
+      |                                    uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:993:71: note: format string is defined here
+  993 |       PRINT("memory_id: %d\nmemory_op_id: %llu\noffset %llu\nshadow: %p\nlen: %llu\n", *memory_id,
+      |                                                                      ~^
+      |                                                                       |
+      |                                                                       void*
+      |                                                                      %ld
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:993:13: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 7 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+  993 |       PRINT("memory_id: %d\nmemory_op_id: %llu\noffset %llu\nshadow: %p\nlen: %llu\n", *memory_id,
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  994 |             *memory_op_id, offset, *shadow_start, *len);
+      |                                                   ~~~~
+      |                                                   |
+      |                                                   uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:993:82: note: format string is defined here
+  993 |       PRINT("memory_id: %d\nmemory_op_id: %llu\noffset %llu\nshadow: %p\nlen: %llu\n", *memory_id,
+      |                                                                               ~~~^
+      |                                                                                  |
+      |                                                                                  long long unsigned int
+      |                                                                               %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp: In function ‘redshow_result_t redshow_memcpy_register(int32_t, uint64_t, bool, uint64_t, bool, uint64_t, uint64_t)’:
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1043:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 4 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+ 1043 |       "\nredshow-> Enter redshow_memcpy_register\nmemcpy_id: %d\nhost_op_id: "
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1044 |       "%llu\nsrc_host: %d\nsrc_start: %llu\ndst_host: %d\ndst_start: "
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1045 |       "%llu\nlen: %llu\n",
+      |       ~~~~~~~~~~~~~~~~~~~
+ 1046 |       memcpy_id, host_op_id, src_host, src_start, dst_host, dst_start, len);
+      |                  ~~~~~~~~~~
+      |                  |
+      |                  uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1044:11: note: format string is defined here
+ 1044 |       "%llu\nsrc_host: %d\nsrc_start: %llu\ndst_host: %d\ndst_start: "
+      |        ~~~^
+      |           |
+      |           long long unsigned int
+      |        %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1043:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 6 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+ 1043 |       "\nredshow-> Enter redshow_memcpy_register\nmemcpy_id: %d\nhost_op_id: "
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1044 |       "%llu\nsrc_host: %d\nsrc_start: %llu\ndst_host: %d\ndst_start: "
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1045 |       "%llu\nlen: %llu\n",
+      |       ~~~~~~~~~~~~~~~~~~~
+ 1046 |       memcpy_id, host_op_id, src_host, src_start, dst_host, dst_start, len);
+      |                                        ~~~~~~~~~
+      |                                        |
+      |                                        uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1044:42: note: format string is defined here
+ 1044 |       "%llu\nsrc_host: %d\nsrc_start: %llu\ndst_host: %d\ndst_start: "
+      |                                       ~~~^
+      |                                          |
+      |                                          long long unsigned int
+      |                                       %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1043:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 8 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+ 1043 |       "\nredshow-> Enter redshow_memcpy_register\nmemcpy_id: %d\nhost_op_id: "
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1044 |       "%llu\nsrc_host: %d\nsrc_start: %llu\ndst_host: %d\ndst_start: "
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1045 |       "%llu\nlen: %llu\n",
+      |       ~~~~~~~~~~~~~~~~~~~
+ 1046 |       memcpy_id, host_op_id, src_host, src_start, dst_host, dst_start, len);
+      |                                                             ~~~~~~~~~
+      |                                                             |
+      |                                                             uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1045:11: note: format string is defined here
+ 1045 |       "%llu\nlen: %llu\n",
+      |        ~~~^
+      |           |
+      |           long long unsigned int
+      |        %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1043:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 9 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+ 1043 |       "\nredshow-> Enter redshow_memcpy_register\nmemcpy_id: %d\nhost_op_id: "
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1044 |       "%llu\nsrc_host: %d\nsrc_start: %llu\ndst_host: %d\ndst_start: "
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1045 |       "%llu\nlen: %llu\n",
+      |       ~~~~~~~~~~~~~~~~~~~
+ 1046 |       memcpy_id, host_op_id, src_host, src_start, dst_host, dst_start, len);
+      |                                                                        ~~~
+      |                                                                        |
+      |                                                                        uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1045:22: note: format string is defined here
+ 1045 |       "%llu\nlen: %llu\n",
+      |                   ~~~^
+      |                      |
+      |                      long long unsigned int
+      |                   %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp: In function ‘redshow_result_t redshow_memset_register(int32_t, uint64_t, uint64_t, uint32_t, uint64_t)’:
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1093:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 4 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+ 1093 |       "\nredshow-> Enter redshow_memset_register\nmemset_id: %d\nhost_op_id: %llu\nstart: "
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1094 |       "%llu\nvalue: %u\nlen: %llu\n",
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1095 |       memset_id, host_op_id, start, value, len);
+      |                  ~~~~~~~~~~
+      |                  |
+      |                  uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1093:81: note: format string is defined here
+ 1093 |       "\nredshow-> Enter redshow_memset_register\nmemset_id: %d\nhost_op_id: %llu\nstart: "
+      |                                                                              ~~~^
+      |                                                                                 |
+      |                                                                                 long long unsigned int
+      |                                                                              %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1093:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 5 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+ 1093 |       "\nredshow-> Enter redshow_memset_register\nmemset_id: %d\nhost_op_id: %llu\nstart: "
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1094 |       "%llu\nvalue: %u\nlen: %llu\n",
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1095 |       memset_id, host_op_id, start, value, len);
+      |                              ~~~~~
+      |                              |
+      |                              uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1094:11: note: format string is defined here
+ 1094 |       "%llu\nvalue: %u\nlen: %llu\n",
+      |        ~~~^
+      |           |
+      |           long long unsigned int
+      |        %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1093:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 7 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+ 1093 |       "\nredshow-> Enter redshow_memset_register\nmemset_id: %d\nhost_op_id: %llu\nstart: "
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1094 |       "%llu\nvalue: %u\nlen: %llu\n",
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1095 |       memset_id, host_op_id, start, value, len);
+      |                                            ~~~
+      |                                            |
+      |                                            uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1094:33: note: format string is defined here
+ 1094 |       "%llu\nvalue: %u\nlen: %llu\n",
+      |                              ~~~^
+      |                                 |
+      |                                 long long unsigned int
+      |                              %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp: In function ‘redshow_result_t redshow_kernel_launch_end(uint32_t, int32_t, uint64_t, int32_t, int32_t, char*, uint64_t)’:
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1158:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 4 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+ 1158 |       "\nredshow-> Enter redshow_kernel_launch_end\nkernel_id: %d\nhost_op_id:%llu\n flat_gridsize: %d\n flat_blocksize: %d\nfunction_name: %s\nfunction_pc: %llu\n", kernel_id, host_op_id, flat_gridsize, flat_blocksize, function_name, function_pc);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~             ~~~~~~~~~~
+      |                                                                                                                                                                                  |
+      |                                                                                                                                                                                  uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1158:82: note: format string is defined here
+ 1158 |       "\nredshow-> Enter redshow_kernel_launch_end\nkernel_id: %d\nhost_op_id:%llu\n flat_gridsize: %d\n flat_blocksize: %d\nfunction_name: %s\nfunction_pc: %llu\n", kernel_id, host_op_id, flat_gridsize, flat_blocksize, function_name, function_pc);
+      |                                                                               ~~~^
+      |                                                                                  |
+      |                                                                                  long long unsigned int
+      |                                                                               %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1158:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 8 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+ 1158 |       "\nredshow-> Enter redshow_kernel_launch_end\nkernel_id: %d\nhost_op_id:%llu\n flat_gridsize: %d\n flat_blocksize: %d\nfunction_name: %s\nfunction_pc: %llu\n", kernel_id, host_op_id, flat_gridsize, flat_blocksize, function_name, function_pc);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                       ~~~~~~~~~~~
+      |                                                                                                                                                                                                                                            |
+      |                                                                                                                                                                                                                                            uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1158:161: note: format string is defined here
+ 1158 |       "\nredshow-> Enter redshow_kernel_launch_end\nkernel_id: %d\nhost_op_id:%llu\n flat_gridsize: %d\n flat_blocksize: %d\nfunction_name: %s\nfunction_pc: %llu\n", kernel_id, host_op_id, flat_gridsize, flat_blocksize, function_name, function_pc);
+      |                                                                                                                                                              ~~~^
+      |                                                                                                                                                                 |
+      |                                                                                                                                                                 long long unsigned int
+      |                                                                                                                                                              %lu
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp: In function ‘redshow_result_t redshow_analyze(uint32_t, uint32_t, uint32_t, int32_t, uint64_t, gpu_patch_buffer_t*)’:
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1176:7: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 7 has type ‘uint64_t’ {aka ‘long unsigned int’} [-Wformat=]
+ 1176 |       "\nredshow-> Enter redshow_analyze\ncpu_thread: %u\ncubin_id: %u\nmod_id: %u\n"
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1177 |       "kernel_id: %d\nhost_op_id: %llu\ntrace_data: %p\n",
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1178 |       cpu_thread, cubin_id, mod_id, kernel_id, host_op_id, trace_data);
+      |                                                ~~~~~~~~~~
+      |                                                |
+      |                                                uint64_t {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:30:36: note: in definition of macro ‘PRINT’
+   30 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/redshow.cpp:1177:38: note: format string is defined here
+ 1177 |       "kernel_id: %d\nhost_op_id: %llu\ntrace_data: %p\n",
+      |                                   ~~~^
+      |                                      |
+      |                                      long long unsigned int
+      |                                   %lu
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/redshow_parser.o -c /home/yzhao62/opt/gpupunk/redshow/src/redshow_parser.cpp
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/analysis/analysis.o -c /home/yzhao62/opt/gpupunk/redshow/src/analysis/analysis.cpp
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.o -c /home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp: In member function ‘virtual void redshow::MemoryAccess::function_call(const redshow::ThreadId&, redshow::u64, redshow::u64)’:
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:61:9: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 3 has type ‘redshow::u64’ {aka ‘long unsigned int’} [-Wformat=]
+   61 |   PRINT("redshow-> function_call pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~
+      |                                                              |
+      |                                                              redshow::u64 {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:55:36: note: in definition of macro ‘PRINT’
+   55 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:61:40: note: format string is defined here
+   61 |   PRINT("redshow-> function_call pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |                                     ~~~^
+      |                                        |
+      |                                        long long unsigned int
+      |                                     %lu
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:61:9: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 4 has type ‘redshow::u64’ {aka ‘long unsigned int’} [-Wformat=]
+   61 |   PRINT("redshow-> function_call pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      ~~~~~~~~~
+      |                                                                  |
+      |                                                                  redshow::u64 {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:55:36: note: in definition of macro ‘PRINT’
+   55 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:61:56: note: format string is defined here
+   61 |   PRINT("redshow-> function_call pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |                                                     ~~~^
+      |                                                        |
+      |                                                        long long unsigned int
+      |                                                     %lu
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp: In member function ‘virtual void redshow::MemoryAccess::function_return(const redshow::ThreadId&, redshow::u64, redshow::u64)’:
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:65:9: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 3 has type ‘redshow::u64’ {aka ‘long unsigned int’} [-Wformat=]
+   65 |   PRINT("redshow-> function_return pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~
+      |                                                                |
+      |                                                                redshow::u64 {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:55:36: note: in definition of macro ‘PRINT’
+   55 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:65:42: note: format string is defined here
+   65 |   PRINT("redshow-> function_return pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |                                       ~~~^
+      |                                          |
+      |                                          long long unsigned int
+      |                                       %lu
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:65:9: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 4 has type ‘redshow::u64’ {aka ‘long unsigned int’} [-Wformat=]
+   65 |   PRINT("redshow-> function_return pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      ~~~~~~~~~
+      |                                                                    |
+      |                                                                    redshow::u64 {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:55:36: note: in definition of macro ‘PRINT’
+   55 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.cpp:65:58: note: format string is defined here
+   65 |   PRINT("redshow-> function_return pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |                                                       ~~~^
+      |                                                          |
+      |                                                          long long unsigned int
+      |                                                       %lu
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.o -c /home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp: In member function ‘virtual void redshow::RedundantWrite::function_call(const redshow::ThreadId&, redshow::u64, redshow::u64)’:
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:61:9: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 3 has type ‘redshow::u64’ {aka ‘long unsigned int’} [-Wformat=]
+   61 |   PRINT("redshow-> function_call pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~
+      |                                                              |
+      |                                                              redshow::u64 {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:55:36: note: in definition of macro ‘PRINT’
+   55 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:61:40: note: format string is defined here
+   61 |   PRINT("redshow-> function_call pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |                                     ~~~^
+      |                                        |
+      |                                        long long unsigned int
+      |                                     %lu
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:61:9: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 4 has type ‘redshow::u64’ {aka ‘long unsigned int’} [-Wformat=]
+   61 |   PRINT("redshow-> function_call pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      ~~~~~~~~~
+      |                                                                  |
+      |                                                                  redshow::u64 {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:55:36: note: in definition of macro ‘PRINT’
+   55 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:61:56: note: format string is defined here
+   61 |   PRINT("redshow-> function_call pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |                                                     ~~~^
+      |                                                        |
+      |                                                        long long unsigned int
+      |                                                     %lu
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp: In member function ‘virtual void redshow::RedundantWrite::function_return(const redshow::ThreadId&, redshow::u64, redshow::u64)’:
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:65:9: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 3 has type ‘redshow::u64’ {aka ‘long unsigned int’} [-Wformat=]
+   65 |   PRINT("redshow-> function_return pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~
+      |                                                                |
+      |                                                                redshow::u64 {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:55:36: note: in definition of macro ‘PRINT’
+   55 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:65:42: note: format string is defined here
+   65 |   PRINT("redshow-> function_return pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |                                       ~~~^
+      |                                          |
+      |                                          long long unsigned int
+      |                                       %lu
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:65:9: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 4 has type ‘redshow::u64’ {aka ‘long unsigned int’} [-Wformat=]
+   65 |   PRINT("redshow-> function_return pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      ~~~~~~~~~
+      |                                                                    |
+      |                                                                    redshow::u64 {aka long unsigned int}
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:55:36: note: in definition of macro ‘PRINT’
+   55 | #define PRINT(...) fprintf(stderr, __VA_ARGS__)
+      |                                    ^~~~~~~~~~~
+/home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.cpp:65:58: note: format string is defined here
+   65 |   PRINT("redshow-> function_return pc=%llu, target_pc=%llu\n", pc, target_pc);
+      |                                                       ~~~^
+      |                                                          |
+      |                                                          long long unsigned int
+      |                                                       %lu
+ar rc   -o /home/yzhao62/opt/gpupunk/redshow/lib/libredshow.a /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/common/hash.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/common/utils.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/operation.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/memcpy.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/memory.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/memset.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/binutils/instruction.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/redshow.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/redshow_parser.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/analysis/analysis.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.o 
+g++ -fPIC -std=c++17 -g -DDEBUG -march=native -I/home/yzhao62/opt/gpupunk/redshow/include/ -I/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x/include -I/home/yzhao62/opt/gpupunk_install/gpu-patch/include -o redshow_parser /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/common/hash.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/common/utils.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/operation.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/memcpy.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/memory.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/operation/memset.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/binutils/instruction.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/redshow.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/redshow_parser.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/analysis/analysis.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/analysis/memory_access.o /home/yzhao62/opt/gpupunk/redshow/build//home/yzhao62/opt/gpupunk/redshow/src/analysis/redundant_write.o
+mkdir -p /home/yzhao62/opt/gpupunk_install/redshow//home/yzhao62/opt/gpupunk/redshow/lib/
+mkdir -p /home/yzhao62/opt/gpupunk_install/redshow//home/yzhao62/opt/gpupunk/redshow/include/
+mkdir -p /home/yzhao62/opt/gpupunk_install/redshow//home/yzhao62/opt/gpupunk/redshow/bin/
+cp -rf /home/yzhao62/opt/gpupunk/redshow/lib/ /home/yzhao62/opt/gpupunk_install/redshow
+# cp -rf /home/yzhao62/opt/gpupunk/redshow/include/redshow.h /home/yzhao62/opt/gpupunk_install/redshow//home/yzhao62/opt/gpupunk/redshow/include/
+# cp -rf /home/yzhao62/opt/gpupunk/redshow/include/redshow_graphviz.h /home/yzhao62/opt/gpupunk_install/redshow//home/yzhao62/opt/gpupunk/redshow/include/
+cp -rf /home/yzhao62/opt/gpupunk/redshow/include//* /home/yzhao62/opt/gpupunk_install/redshow//home/yzhao62/opt/gpupunk/redshow/include//
+cp -rf redshow_parser /home/yzhao62/opt/gpupunk_install/redshow//home/yzhao62/opt/gpupunk/redshow/bin/

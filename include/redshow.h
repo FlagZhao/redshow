@@ -20,6 +20,8 @@ typedef enum redshow_analysis_type {
   REDSHOW_ANALYSIS_CCT = 6,
   REDSHOW_ANALYSIS_CCT_MEMORY_ACCESS = 7,
   REDSHOW_ANALYSIS_PAGE_SHARING = 8,
+  REDSHOW_ANALYSIS_REDUNDANT_WRITE = 9,
+  REDSHOW_ANALYSIS_RACE_DETECTION = 10
 } redshow_analysis_type_t;
 
 typedef enum redshow_analysis_config_type {
@@ -30,7 +32,8 @@ typedef enum redshow_analysis_config_type {
 typedef enum redshow_access_type {
   REDSHOW_ACCESS_UNKNOWN = 0,
   REDSHOW_ACCESS_READ = 1,
-  REDSHOW_ACCESS_WRITE = 2
+  REDSHOW_ACCESS_WRITE = 2,
+  REDSHOW_ACCESS_ATOMIC = 3
 } redshow_access_type_t;
 
 typedef enum redshow_data_type {
@@ -474,7 +477,7 @@ EXTERNC redshow_result_t redshow_flush_now(uint32_t cpu_thread);
  *
  * @thread-safe YES
  */
-EXTERNC redshow_result_t redshow_get_kernel_trace(uint32_t cpu_thread, void *&thread_kernel_trace, void *&memory_snapshot_p);
+EXTERNC redshow_result_t redshow_get_kernel_trace(uint32_t cpu_thread, void **thread_kernel_trace, void **memory_snapshot_p);
 
 /**
  * @brief Get memory_snapshot for drcctprof.
@@ -484,6 +487,6 @@ EXTERNC redshow_result_t redshow_get_kernel_trace(uint32_t cpu_thread, void *&th
  *
  * @thread-safe NO
  */
-EXTERNC redshow_result_t redshow_get_memory_snapshot(void *&memory_snapshot_p);
+EXTERNC redshow_result_t redshow_get_memory_snapshot(void **memory_snapshot_p);
 
 #endif  // REDSHOW_H
