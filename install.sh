@@ -1,0 +1,1 @@
+make PREFIX=/home/yzhao62/opt/gpupunk_install/redshow BOOST_DIR=/home/yzhao62/opt/gpupunk_install/spack/opt/spack/linux-ubuntu22.04-zen2/gcc-9.5.0/boost-1.81.0-y4eroiejjvhhe4p5rbthh4bj2tufvi3x GPU_PATCH_DIR=/home/yzhao62/opt/gpupunk_install/gpu-patch DEBUG=1  STATIC_CPP=1 install -f Makefile.static
