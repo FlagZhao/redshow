@@ -10,12 +10,20 @@ include $(CONFIGS)
 CC := g++
 AR := ar rc
 
-LIB_DIR := /home/yzhao62/opt/gpupunk/redshow/lib/
-INC_DIR := /home/yzhao62/opt/gpupunk/redshow/include/
-BIN_DIR := /home/yzhao62/opt/gpupunk/redshow/bin/
-SRC_DIR := /home/yzhao62/opt/gpupunk/redshow/src/
+# LIB_DIR := /home/yzhao62/opt/redsan_ae/gpupunk/redshow/lib/
+# INC_DIR := /home/yzhao62/opt/redsan_ae/gpupunk/redshow/include/
+# BIN_DIR := /home/yzhao62/opt/redsan_ae/gpupunk/redshow/bin/
+# SRC_DIR := /home/yzhao62/opt/redsan_ae/gpupunk/redshow/src/
+# BOOST_INC_DIR := $(BOOST_DIR)/include
+# BUILD_DIR := /home/yzhao62/opt/redsan_ae/gpupunk/redshow/build/
+# CUR_DIR = $(shell pwd)/
+
+LIB_DIR := lib/
+INC_DIR := include/
+BIN_DIR := bin/
+SRC_DIR := src/
 BOOST_INC_DIR := $(BOOST_DIR)/include
-BUILD_DIR := /home/yzhao62/opt/gpupunk/redshow/build/
+BUILD_DIR := build/
 CUR_DIR = $(shell pwd)/
 
 LIB := $(LIB_DIR)lib$(PROJECT).a
@@ -73,7 +81,7 @@ $(LIB_DIR):
 # 	$(CC) $(CFLAGS) -I$(INC_DIR) -I$(BOOST_DIR)/include -I$(GPU_PATCH_DIR)/include -o $@ $^
 
 $(BINS): % : $(SRC_DIR)%.cpp $(OBJECTS)
-	$(CC) $(CFLAGS) -I$(INC_DIR) -I$(BOOST_DIR)/include -I$(GPU_PATCH_DIR)/include -o $@ $(filter-out $(BUILD_DIR)src/$*.o, $(OBJECTS))
+	$(CC) $(CFLAGS) -I$(INC_DIR) -I$(BOOST_DIR)/include -I$(GPU_PATCH_DIR)/include -o $@ $< $(filter-out $(BUILD_DIR)src/$*.o, $(OBJECTS)) $(LDFLAGS)
 
 $(LIB): $(OBJECTS)
 	$(AR)   -o $@ $^ 
