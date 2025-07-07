@@ -149,3 +149,5 @@ build/
 .cache/
 redshow_parser
 .vscode/
+./*.log
+./*.txt
