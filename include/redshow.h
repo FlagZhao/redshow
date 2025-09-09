@@ -21,7 +21,8 @@ typedef enum redshow_analysis_type {
   REDSHOW_ANALYSIS_CCT_MEMORY_ACCESS = 7,
   REDSHOW_ANALYSIS_PAGE_SHARING = 8,
   REDSHOW_ANALYSIS_REDUNDANT_WRITE = 9,
-  REDSHOW_ANALYSIS_RACE_DETECTION = 10
+  REDSHOW_ANALYSIS_RACE_DETECTION = 10,
+  REDSHOW_ANALYSIS_PC_DEPENDENCY = 11
 } redshow_analysis_type_t;
 
 typedef enum redshow_analysis_config_type {
